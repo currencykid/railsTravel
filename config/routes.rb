@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
+   root 'tags#index'
 	get '/tags' => 'tags#index' 	
 
 	get '/tags/:id' => 'tags#show' , as: :tag 
 
 	get '/destinations/:id' => 'destinations#show', as: :destination
+	get '/destinations/:id/edit' => 'destinations#edit', as: :edit_destination 
+	patch '/destinations/:id' => 'destinations#update'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'tags#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
